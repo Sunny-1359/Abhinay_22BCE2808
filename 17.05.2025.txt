@@ -1,0 +1,34 @@
+SHOW DATABASES;
+CREATE DATABASE vit;
+USE vit;
+
+CREATE TABLE vit_vellore (
+    full_name VARCHAR(100),
+    reg_no VARCHAR(20) PRIMARY KEY,
+    school VARCHAR(100),
+    graduation_year INT
+);
+
+INSERT INTO vit_vellore (full_name, reg_no, school, graduation_year) VALUES
+('Ishita Malhotra', '21BCE1001', 'School of Computer Science', 2025),
+('Tanishq Gupta', '21EEE1002', 'School of Electrical Engineering', 2025),
+('Ritika Menon', '21MEC1003', 'School of Mechanical Engineering', 2025),
+('Rahul Joshi', '20BCE1004', 'School of Computer Science', 2024);
+
+INSERT INTO vit_vellore (full_name, reg_no, school, graduation_year) VALUES
+('Saanvi Pillai', '21CSE1005', 'School of Computer Science', 2025),
+('Vedant Nair', '21ECE1006', 'School of Electronics Engineering', 2025),
+('Aarushi Singh', '20BBA1007', 'School of Business', 2024),
+('Yashwant Shetty', '22CIV1008', 'School of Civil Engineering', 2026),
+('Kavya Bansal', '21BIO1009', 'School of Bio Sciences', 2025);
+
+SELECT * FROM vit_vellore;
+
+ALTER TABLE vit_vellore ADD(phone VARCHAR(10));
+DESC vit_vellore;
+
+ALTER TABLE vit_vellore DROP COLUMN phone;
+
+ALTER TABLE vit_vellore ADD(s_country VARCHAR(10) DEFAULT 'India');
+
+UPDATE vit_vellore SET full_name = 'Neha Khandelwal' WHERE full_name = 'Aarushi Singh';
